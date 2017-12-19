@@ -1,0 +1,4 @@
+services:
+#    madera_devis.example:
+#        class: Madera\DevisBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

@@ -1,0 +1,17 @@
+Madera\DevisBundle\Entity\modules:
+    type: entity
+    table: null
+    repositoryClass: Madera\DevisBundle\Repository\modulesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        tarif:
+            type: integer
+    lifecycleCallbacks: {  }
