@@ -3,9 +3,9 @@
 namespace Madera\DevisBundle\Entity;
 
 /**
- * gammes
+ * Gammes
  */
-class gammes
+class Gammes
 {
     /**
      * @var int

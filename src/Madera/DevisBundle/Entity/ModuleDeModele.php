@@ -3,9 +3,9 @@
 namespace Madera\DevisBundle\Entity;
 
 /**
- * modulesdemodele
+ * ModuleDeModele
  */
-class modulesdemodele
+class ModuleDeModele
 {
     /**
      * @var int
@@ -44,7 +44,7 @@ class modulesdemodele
      *
      * @param integer $idModele
      *
-     * @return modulesdemodele
+     * @return moduleDeModele
      */
     public function setIdModele($idModele)
     {
@@ -68,7 +68,7 @@ class modulesdemodele
      *
      * @param integer $idModule
      *
-     * @return modulesdemodele
+     * @return moduleDeModele
      */
     public function setIdModule($idModule)
     {
@@ -92,7 +92,7 @@ class modulesdemodele
      *
      * @param integer $quantite
      *
-     * @return modulesdemodele
+     * @return moduleDeModele
      */
     public function setQuantite($quantite)
     {

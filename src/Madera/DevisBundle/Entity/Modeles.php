@@ -3,9 +3,9 @@
 namespace Madera\DevisBundle\Entity;
 
 /**
- * modeles
+ * Modeles
  */
-class modeles
+class Modeles
 {
     /**
      * @var int

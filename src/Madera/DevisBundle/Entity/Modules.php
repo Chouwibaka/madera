@@ -3,9 +3,9 @@
 namespace Madera\DevisBundle\Entity;
 
 /**
- * modules
+ * Modules
  */
-class modules
+class Modules
 {
     /**
      * @var int
