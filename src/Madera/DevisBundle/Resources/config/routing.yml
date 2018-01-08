@@ -1,3 +1,0 @@
-madera_devis_homepage:
-    path:     /
-    defaults: { _controller: MaderaDevisBundle:Default:index }

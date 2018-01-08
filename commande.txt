@@ -1,5 +1,0 @@
-git status
-git add + fichiers
-git commit -m "commentaire"
-git pull origin master
-git push origin master
