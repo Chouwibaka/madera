@@ -23,6 +23,7 @@ class ClientType extends AbstractType
                     'Homme' => 'H',
                     'Femme' => 'F',
                 ),
+                'label' => "Civilité",
                 'expanded' => true,
                 'multiple' => false,
                 'required' => true,
@@ -33,6 +34,9 @@ class ClientType extends AbstractType
             ->add('prenom', TextType::class, array(
                 'label' => 'Prénom',
                 'required' => true,
+                'attr' => array(
+                    'placeholder' => 'Prénom',
+                ),
                 'constraints' => new NotBlank(array(
                     'message' => "Veuillez renseigner le prénom"
                 ))
@@ -40,6 +44,9 @@ class ClientType extends AbstractType
             ->add('nom', TextType::class, array(
                 'label' => 'Nom',
                 'required' => true,
+                'attr' => array(
+                    'placeholder' => 'Nom',
+                ),
                 'constraints' => new NotBlank(array(
                     'message' => "Veuillez renseigner le nom"
                 ))
@@ -47,13 +54,29 @@ class ClientType extends AbstractType
             ->add('telephone', TextType::class, array(
                 'label' => 'Téléphone',
                 'required' => true,
+                'attr' => array(
+                    'placeholder' => 'Téléphone',
+                ),
                 'constraints' => new NotBlank(array(
                     'message' => "Veuillez renseigner le téléphone"
+                ))
+            ))
+            ->add('email', TextType::class, array(
+                'label' => 'E-mail',
+                'required' => true,
+                'attr' => array(
+                    'placeholder' => 'E-mail',
+                ),
+                'constraints' => new NotBlank(array(
+                    'message' => "Veuillez renseigner l'email"
                 ))
             ))
             ->add('adresse', TextType::class, array(
                 'label' => 'Adresse',
                 'required' => true,
+                'attr' => array(
+                    'placeholder' => 'Adresse',
+                ),
                 'constraints' => new NotBlank(array(
                     'message' => "Veuillez renseigner l'adresse"
                 ))
@@ -61,6 +84,9 @@ class ClientType extends AbstractType
             ->add('codepostal', TextType::class, array(
                 'label' => 'Code postal',
                 'required' => true,
+                'attr' => array(
+                    'placeholder' => 'Code postal',
+                ),
                 'constraints' => new NotBlank(array(
                     'message' => "Veuillez renseigner le code postal"
                 ))
@@ -68,6 +94,9 @@ class ClientType extends AbstractType
             ->add('ville', TextType::class, array(
                 'label' => 'Ville',
                 'required' => true,
+                'attr' => array(
+                    'placeholder' => 'Ville',
+                ),
                 'constraints' => new NotBlank(array(
                     'message' => "Veuillez renseigner la ville"
                 ))
