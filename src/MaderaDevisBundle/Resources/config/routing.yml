@@ -1,3 +1,7 @@
 madera_devis_homepage:
     path:     /
     defaults: { _controller: MaderaDevisBundle:Default:index }
+
+devis_new:
+    path:   /devis/new
+    defaults: { _controller: MaderaDevisBundle:Default:newDevis }
