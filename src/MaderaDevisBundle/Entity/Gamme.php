@@ -27,6 +27,11 @@ class Gamme
     private $name;
 
     /**
+     * @ORM\Column(name="tarif", type="decimal", precision=10, scale=2)
+     */
+    private $tarif;
+
+    /**
      * Get id
      *
      * @return int
@@ -58,5 +63,29 @@ class Gamme
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set tarif
+     *
+     * @param string $tarif
+     *
+     * @return Gamme
+     */
+    public function setTarif($tarif)
+    {
+        $this->tarif = $tarif;
+
+        return $this;
+    }
+
+    /**
+     * Get tarif
+     *
+     * @return string
+     */
+    public function getTarif()
+    {
+        return $this->tarif;
     }
 }

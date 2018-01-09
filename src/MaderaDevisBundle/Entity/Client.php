@@ -22,7 +22,7 @@ class Client
     private $id;
 
     /**
-     * @ORM\Column(name="civilite", type="string", length=255)
+     * @ORM\Column(name="civilite", type="string", length=1)
      */
     private $civilite;
 

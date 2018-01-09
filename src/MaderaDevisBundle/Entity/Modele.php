@@ -27,9 +27,17 @@ class Modele
     private $name;
 
     /**
-     * @ORM\Column(name="tarif", type="decimal", precision=10, scale=2)
+     * @ORM\ManyToMany(targetEntity="Gamme")
+     * @ORM\JoinTable(name="modele_gammes")
      */
-    private $tarif;
+    private $gammes;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Module")
+     * @ORM\JoinTable(name="modele_modules")
+     */
+    private $modules;
+
 
     /**
      * Get id
@@ -87,5 +95,80 @@ class Modele
     public function getTarif()
     {
         return $this->tarif;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->gammes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add gamme
+     *
+     * @param \MaderaDevisBundle\Entity\Gamme $gamme
+     *
+     * @return Modele
+     */
+    public function addGamme(\MaderaDevisBundle\Entity\Gamme $gamme)
+    {
+        $this->gammes[] = $gamme;
+
+        return $this;
+    }
+
+    /**
+     * Remove gamme
+     *
+     * @param \MaderaDevisBundle\Entity\Gamme $gamme
+     */
+    public function removeGamme(\MaderaDevisBundle\Entity\Gamme $gamme)
+    {
+        $this->gammes->removeElement($gamme);
+    }
+
+    /**
+     * Get gammes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGammes()
+    {
+        return $this->gammes;
+    }
+
+    /**
+     * Add module
+     *
+     * @param \MaderaDevisBundle\Entity\Module $module
+     *
+     * @return Modele
+     */
+    public function addModule(\MaderaDevisBundle\Entity\Module $module)
+    {
+        $this->modules[] = $module;
+
+        return $this;
+    }
+
+    /**
+     * Remove module
+     *
+     * @param \MaderaDevisBundle\Entity\Module $module
+     */
+    public function removeModule(\MaderaDevisBundle\Entity\Module $module)
+    {
+        $this->modules->removeElement($module);
+    }
+
+    /**
+     * Get modules
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getModules()
+    {
+        return $this->modules;
     }
 }

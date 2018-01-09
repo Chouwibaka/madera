@@ -5,7 +5,7 @@ namespace MaderaDevisBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Devis
+ * devis
  *
  * @ORM\Table(name="devis")
  * @ORM\Entity(repositoryClass="MaderaDevisBundle\Repository\DevisRepository")
@@ -25,15 +25,9 @@ class Devis
     private $modele;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Gamme")
+     * @ORM\ManyToOne(targetEntity="Client")
      */
-    private $gamme;
-
-    /**
-     * @ORM\@ManyToMany(targetEntity="Module")
-     * @ORM\JoinTable(name="devis_modules")
-     */
-
+    private $client;
 
     /**
      * Get id
@@ -91,5 +85,29 @@ class Devis
     public function getGamme()
     {
         return $this->gamme;
+    }
+
+    /**
+     * Set client
+     *
+     * @param \MaderaDevisBundle\Entity\Client $client
+     *
+     * @return Devis
+     */
+    public function setClient(\MaderaDevisBundle\Entity\Client $client = null)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \MaderaDevisBundle\Entity\Client
+     */
+    public function getClient()
+    {
+        return $this->client;
     }
 }
