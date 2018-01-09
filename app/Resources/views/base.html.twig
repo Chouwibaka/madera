@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="{{ asset('bundles/maderadevis/css/styleSheet.css') }}" rel="stylesheet" type="text/css" media="all"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    {% endblock %}
+
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <title>Page d'accueil</title>
+</head>
+<body>
+{% block header %}
+    <div class="divLogoHeader">
+        <img src="{{ asset('bundles/maderadevis/logo_madera.png') }}" alt="LogoMadera"/>
+    </div>
+    <div>
+        <ul class="ulHeadBand">
+            <li class="liHeadBand"><a href="main.html">Accueil</a></li>
+            <li class="liHeadBand"><a href="create.html">Créer devis</a></li>
+            <li class="liHeadBand"><a href="form.html">Déconnexion</a></li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block body %}{% endblock %}
+
+{% block javascripts %}{% endblock %}
+</body>
 </html>
