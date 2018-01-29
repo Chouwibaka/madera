@@ -171,4 +171,9 @@ class Modele
     {
         return $this->modules;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }
