@@ -1,7 +1,19 @@
 madera_devis_homepage:
     path:     /
     defaults: { _controller: MaderaDevisBundle:Default:index }
+    methods:  GET
 
 devis_new:
     path:   /devis/new
-    defaults: { _controller: MaderaDevisBundle:Default:newDevis }
+    defaults: { _controller: MaderaDevisBundle:Devis:new }
+    methods:  [GET, POST]
+
+devis_new2:
+    path:   /devis/new2
+    defaults: { _controller: MaderaDevisBundle:Devis:new2 }
+    methods:  POST
+
+devis_show:
+    path:   /devis/show/{id}
+    defaults: { _controller: MaderaDevisBundle:Devis:show }
+    methods:  GET

@@ -5,6 +5,7 @@ namespace MaderaDevisBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class DevisType extends AbstractType
 {
@@ -17,12 +18,12 @@ class DevisType extends AbstractType
         $builder
             ->add('modele', EntityType::class, array(
                 'label' => 'Modèle',
-                'class' => 'AppBundle\Entity\Modele',
+                'class' => 'MaderaDevisBundle\Entity\Modele',
                 'required' => true
             ))
             ->add('gamme', EntityType::class, array(
                 'label' => 'Gamme',
-                'class' => 'AppBundle\Entity\Gamme',
+                'class' => 'MaderaDevisBundle\Entity\Gamme',
                 'required' => true
             ))
         ;

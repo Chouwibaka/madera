@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Création d'un devis {% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block page_title %}
+    <div class="page_title">
+        <h1>Création de devis - Partie client</h1>
+    </div>
+{% endblock %}
+{% block body %}
+    <div class="divform">
+        {{ form_start(form) }}
+
+        <div class="divButton">
+            <input type="button" class="btn btn-success" value="Annuler" onclick="Abort()"/>
+            <input type="submit" class="btn btn-success" value="Valider"/>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        function Abort() {
+            if(confirm("Voulez-vous vraiment quitter le devis en cours ?")){
+                var route = "{{ path('madera_devis_homepage') }}";
+                window.location.href = route;
+            }
+        }
+    </script>
+{% endblock %}

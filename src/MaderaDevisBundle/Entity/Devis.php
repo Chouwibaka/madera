@@ -25,6 +25,11 @@ class Devis
     private $modele;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Gamme")
+     */
+    private $gamme;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Client")
      */
     private $client;

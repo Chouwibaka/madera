@@ -88,4 +88,9 @@ class Gamme
     {
         return $this->tarif;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

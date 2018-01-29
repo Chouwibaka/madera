@@ -1,96 +1,105 @@
 {% extends 'base.html.twig' %}
 
 {% block title %} Création d'un devis {% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block page_title %}
+    <div class="page_title">
+        <h1>Création de devis - Partie client</h1>
+    </div>
+{% endblock %}
 {% block body %}
 <div class="divform">
+    {{ form_start(form) }}
     <div class="form-group row">
         {% block _client_civilite_row %}
-            <div class="name_row">
                 {{ form_label(form.civilite, null, {'label_attr': {'class': 'col-form-label col-sm-2'} }) }}
                 {{ form_errors(form) }}
                 <div class="form-check form-check-inline col-sm-5">
-                    {{ form_widget(form.civilite, { 'attr': {'class': 'form-check-input'} }) }}
+                    {{ form_widget(form.civilite) }}
                 </div>
-            </div>
         {% endblock %}
     </div>
     <div class="form-group row">
         {% block _client_prenom_row %}
-            <div class="name_row">
                 {{ form_label(form.prenom, null, {'label_attr': {'class': 'col-sm-2 control-label'} }) }}
                 {{ form_errors(form) }}
                 <div class="col-sm-5">
                 {{ form_widget(form.prenom, { 'attr': {'class': 'form-control'} }) }}
                 </div>
-            </div>
         {% endblock %}
     </div>
     <div class="form-group row">
         {% block _client_nom_row %}
-            <div class="name_row">
                 {{ form_label(form.nom, null, {'label_attr': {'class': 'col-sm-2 control-label'} }) }}
                 {{ form_errors(form) }}
                 <div class="col-sm-5">
                     {{ form_widget(form.nom, { 'attr': {'class': 'form-control'} }) }}
                 </div>
-            </div>
         {% endblock %}
     </div>
     <div class="form-group row">
         {% block _client_telephone_row %}
-            <div class="name_row">
                 {{ form_label(form.telephone, null, {'label_attr': {'class': 'col-sm-2 control-label'} }) }}
                 {{ form_errors(form) }}
                 <div class="col-sm-5">
                     {{ form_widget(form.telephone, { 'attr': {'class': 'form-control'} }) }}
                 </div>
-            </div>
         {% endblock %}
     </div>
     <div class="form-group row">
         {% block _client_email_row %}
-            <div class="name_row">
                 {{ form_label(form.email, null, {'label_attr': {'class': 'col-sm-2 control-label'} }) }}
                 {{ form_errors(form) }}
                 <div class="col-sm-5">
                     {{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
                 </div>
-            </div>
         {% endblock %}
     </div>
     <div class="form-group row">
         {% block _client_adresse_row %}
-            <div class="name_row">
                 {{ form_label(form.adresse, null, {'label_attr': {'class': 'col-sm-2 control-label'} }) }}
                 {{ form_errors(form) }}
                 <div class="col-sm-5">
                     {{ form_widget(form.adresse, { 'attr': {'class': 'form-control'} }) }}
                 </div>
-            </div>
         {% endblock %}
     </div>
     <div class="form-group row">
         {% block _client_codepostal_row %}
-            <div class="name_row">
                 {{ form_label(form.codepostal, null, {'label_attr': {'class': 'col-sm-2 control-label'} }) }}
                 {{ form_errors(form) }}
                 <div class="col-sm-5">
                     {{ form_widget(form.codepostal, { 'attr': {'class': 'form-control'} }) }}
                 </div>
-            </div>
         {% endblock %}
     </div>
     <div class="form-group row">
         {% block _client_ville_row %}
-            <div class="name_row">
                 {{ form_label(form.ville, null, {'label_attr': {'class': 'col-sm-2 control-label'} }) }}
                 {{ form_errors(form) }}
                 <div class="col-sm-5">
                     {{ form_widget(form.ville, { 'attr': {'class': 'form-control'} }) }}
                 </div>
-            </div>
         {% endblock %}
     </div>
-        <button class="btn btn-sm btn-success"  type="submit">Valider</button>
+    <div class="divButton">
+        <input type="button" class="btn btn-success" value="Annuler" onclick="Abort()"/>
+        <input type="submit" class="btn btn-success" value="Valider"/>
+    </div>
+    {{ form_end(form) }}
 </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        function Abort() {
+            if(confirm("Voulez-vous vraiment quitter le devis en cours ?")){
+                var route = "{{ path('madera_devis_homepage') }}";
+                window.location.href = route;
+            }
+        }
+    </script>
 {% endblock %}
